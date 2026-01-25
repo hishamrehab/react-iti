@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "./link/link";
 
 export default class Navbar
   extends React.Component
@@ -54,6 +55,9 @@ export default class Navbar
         }}>
           Change Name
         </button>
+        <Link name="Home" href="https://www.google.com" />
+        <Link name="About" href="https://www.facebook.com" />
+        <Link name="Contact Us"href="https://www.youtube.com" />
       </>
     );
   }
