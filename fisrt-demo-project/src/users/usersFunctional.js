@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 export default function UsersFunctional() {
     const [users , setUsers ] = useState([
@@ -6,13 +6,25 @@ export default function UsersFunctional() {
             {name : "ali" , age : 22 , isAdmin : true},
             {name : "mohamed" , age : 20 , isAdmin : false}
        ]);
-
         const [isAuth , setIsAuth] =  useState(true);
         
         const handleToggleUsers = () => {
             setIsAuth((isAuth) => !isAuth)
         }
        
+        useEffect(() => {
+      console.log("from didmount");
+        },[]);
+
+           useEffect(() => {
+             console.log("from didupdate");
+           }, [isAuth]);  
+
+        useEffect(() => {
+        // willunmount    
+        },[]);
+        
+
         return (
         <>
          <ul>
