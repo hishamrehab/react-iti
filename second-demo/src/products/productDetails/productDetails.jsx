@@ -1,8 +1,9 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams , useLocation } from 'react-router-dom'
 const ProductDetails = (props) => {
+    const location =useLocation();
  const params = useParams()
- 
+ console.log("location" , location);
  console.log("params" ,params);
 
   return (
