@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const language = useSelector((state) => state.lang);
+  const language = useSelector((state) => state.language.lang);
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>

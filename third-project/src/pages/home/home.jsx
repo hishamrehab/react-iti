@@ -1,9 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { changeLanguage } from "../store/action";
-
+import { changeLanguage } from "../../store/actions/language";
 const Home = () => {
-  const language = useSelector((state) => state.lang);
+  const language = useSelector((state) => state.language.lang);
   const dispatch = useDispatch();
 
   const handleChange = () => {

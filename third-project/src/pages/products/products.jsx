@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import axiosInstance from "../axios config/axiosInstance";
+import axiosInstance from "../../axios config/axiosInstance";
 import { useSelector } from "react-redux";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const LoaderState = useSelector((state) => state.isLoading);
+  const LoaderState = useSelector((state) => state.loader.isLoading);
   useEffect(() => {
     axiosInstance
       .get("products")

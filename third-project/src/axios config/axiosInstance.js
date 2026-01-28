@@ -1,5 +1,5 @@
 import axios from "axios";
-import { changeLoader } from "../store/action";
+import { changeLoader } from "../store/action/loader";
 import store from "../store/store";
 
 
