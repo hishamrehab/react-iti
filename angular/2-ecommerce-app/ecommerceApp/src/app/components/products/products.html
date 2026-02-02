@@ -53,11 +53,25 @@
             </p>
           </ng-template> -->
   
+<!--           
            <div [ngSwitch]="prd.quantity">
             <p *ngSwitchCase="1">Quantity : Last Item </p>
             <p *ngSwitchCase="2">Quantity : Last Two Items </p>
             <p *ngSwitchDefault="">Quantity : {{prd.quantity}}</p>
-           </div>
+           </div> -->
+
+           @switch (prd.quantity) {
+            @case(1) {
+              <p>Quantity : Last Item</p>
+              break;
+            }
+            @case(2) {
+              <p>Quantity : Last Two Items</p>
+            }
+            @default {
+              <p>Quantity : {{prd.quantity}}</p>
+            }
+           }
         
           <!-- <p class="card-text">{{c}}</p> -->
           <!-- template variable , refrence -->
@@ -69,7 +83,6 @@
  }@empty {
   <h1>No Product Found</h1>
  }
- 
 
  <!-- </ng-container> -->
  
