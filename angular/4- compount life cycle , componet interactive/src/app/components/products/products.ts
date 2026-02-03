@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Iproduct } from '../../models/iproduct';
 import { CommonModule } from '@angular/common';
 import { Icategory } from '../../models/icategory';
@@ -20,6 +20,9 @@ import { SquarePipe } from '../../pipes/square-pipe';
   num : number = 4;
   filteredProducts: Iproduct[] = [];
  
+
+  // define event
+ @Output() onTotalPriceChanged : EventEmitter<number>  
 
   @Input() recievedCategoryId:number = 0;
 
@@ -80,7 +83,11 @@ import { SquarePipe } from '../../pipes/square-pipe';
     ]
 
   this.filteredProducts = this.products;
+ 
+  this.onTotalPriceChanged = new EventEmitter<number>();
  }
+
+
   ngOnChanges() {
     this.filterProducts();
   }
@@ -88,6 +95,9 @@ import { SquarePipe } from '../../pipes/square-pipe';
   buy(count: string , price: number) {
   this.totalOrderPrice += +count * price;
   console.log(this.totalOrderPrice);
+
+  // emit event
+   this.onTotalPriceChanged.emit(this.totalOrderPrice);
   }
 
   change() {

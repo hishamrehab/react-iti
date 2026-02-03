@@ -9,6 +9,9 @@
 </div>
 
 <div class="bg-warning my-5">
-
-    <app-products [recievedCategoryId]="selectedCatId"></app-products>
+    <app-products [recievedCategoryId]="selectedCatId"
+      (onTotalPriceChanged)="calcTotalPrice($event)"
+    ></app-products>
 </div>
+
+<h1>{{recevedTotalPrice}}</h1>

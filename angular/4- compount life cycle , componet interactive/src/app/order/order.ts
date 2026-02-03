@@ -13,6 +13,8 @@ import { Products } from "../components/products/products";
 export class Order {
     categories: Icategory[];
     selectedCatId: number = 0;
+    recevedTotalPrice: number = 0;
+
 
 constructor() {
   this.categories =[
@@ -20,5 +22,9 @@ constructor() {
     {id : 2 , name : "mobiles"},
     {id : 3 , name : "tablets"}
   ]
+}
+
+calcTotalPrice(top: number) {
+this.recevedTotalPrice = top
 }
 }
